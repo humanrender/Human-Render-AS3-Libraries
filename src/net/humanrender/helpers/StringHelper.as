@@ -1,5 +1,7 @@
 ﻿package net.humanrender.helpers {
 	
+	/* String Helper */
+	
 	public class StringHelper {
 		
 		public static function trim(word:String):String{
