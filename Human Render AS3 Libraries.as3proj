@@ -13,7 +13,10 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="lib" />
+    <class path="src" />
+    <class path="test\lib" />
+    <class path="test\enum\src" />
+    <class path="test\enum" />
   </classpaths>
   <!-- Build options -->
   <build>
