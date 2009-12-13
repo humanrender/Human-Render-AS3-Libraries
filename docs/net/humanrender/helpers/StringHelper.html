@@ -205,6 +205,10 @@ showHideInherited();
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20"></td><td><code>String</code> &mdash;  A copy of string with a separator or list of separators replaced by whitespace and the first letter title cased
+    var string:String = "post_1_the_quick_brown_fox_jumps_over_the_lazy_dog"
+   StringHelper.humanize(string) // "Post 1 the quick brown fox jumps over the lazy dog"
+   string = "post-1_the/quick-brown_fox/jumps-over_the/lazy-dog"
+   StringHelper.humanize(string, "-", "_", "/") // "Post 1 the quick brown fox jumps over the lazy dog"
    </td>
 </tr>
 </table>
@@ -268,7 +272,7 @@ showHideInherited();
 <span class="label">Example</span>
 <br>   <div class='listing'><pre>
    var string:String = "post #1: The quick brown fox jumps over the lazy dog?"
-   StringHelper.parameterize(string) // "post1_the_quick_brown_fox_jumps_over_the_lazy_dog"
+   StringHelper.parameterize(string) // "post_1_the_quick_brown_fox_jumps_over_the_lazy_dog"
    </pre></div>
    <p></p>
 </div>
