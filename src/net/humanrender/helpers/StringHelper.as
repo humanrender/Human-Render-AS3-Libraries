@@ -42,7 +42,7 @@
 		 * @example
 		 * <listing version="3.0">
 		 * var string:String = "post #1: The quick brown fox jumps over the lazy dog?"
-		 * StringHelper.parameterize(string) // "post1_the_quick_brown_fox_jumps_over_the_lazy_dog"
+		 * StringHelper.parameterize(string) // "post_1_the_quick_brown_fox_jumps_over_the_lazy_dog"
 		 * </listing>
 		 */
 		public static function parameterize(string:String, separator:String = "_"):String {
@@ -54,6 +54,10 @@
 		 * @param	string
 		 * @param	...separators	default is underscore ( "_" )
 		 * @return  A copy of string with a separator or list of separators replaced by whitespace and the first letter title cased
+		 *  var string:String = "post_1_the_quick_brown_fox_jumps_over_the_lazy_dog"
+		 *	StringHelper.humanize(string) // "Post 1 the quick brown fox jumps over the lazy dog"
+		 *	string = "post-1_the/quick-brown_fox/jumps-over_the/lazy-dog"
+		 *	StringHelper.humanize(string, "-", "_", "/") // "Post 1 the quick brown fox jumps over the lazy dog"
 		 */
 		public static function humanize(string:String, ...separators):String {
 			var stringedSeparators:String = separators.length != 0 ? separators.join("|") : "_";
@@ -103,7 +107,7 @@
 				var firstChar:String = arguments[0]; if (!firstChar) firstChar = "";
 				return options(firstChar);
 			};
-			string = string.replace(/^\w/, replaceWith);
+			string = string.replace(/^\s*\w/, replaceWith);
 			return string
 		}
 		
